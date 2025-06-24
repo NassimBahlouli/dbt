@@ -1,0 +1,61 @@
+[0m11:12:43.321195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775baedccc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775baedcd790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775baed535c0>]}
+
+
+============================== 11:12:43.324481 | a935f36c-bdce-41c0-b777-c4da98bdb736 ==============================
+[0m11:12:43.324481 [info ] [MainThread]: Running with dbt=1.10.2
+[0m11:12:43.325075 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/nassim/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init demo_dbt', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:12:43.334043 [info ] [MainThread]: Creating dbt configuration folder at /home/nassim/.dbt
+[0m11:12:43.335534 [debug] [MainThread]: Starter project path: /home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/include/starter_project
+[0m11:12:43.337735 [info ] [MainThread]: 
+Your new dbt project "demo_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:12:43.338154 [info ] [MainThread]: Setting up your profile.
+[0m11:14:39.260987 [error] [MainThread]: Encountered an error:
+
+[0m11:14:39.271910 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/nassim/Datascientest/SPARK/spark/lib/python3.12/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m11:14:39.276996 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 116.01162, "process_in_blocks": "40", "process_kernel_time": 0.181599, "process_mem_max_rss": "205192", "process_out_blocks": "80", "process_user_time": 2.388728}
+[0m11:14:39.280396 [debug] [MainThread]: Command `dbt init` failed at 11:14:39.279767 after 116.02 seconds
+[0m11:14:39.282285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775baeba4e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775b9a065880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x775b98dc69f0>]}
+[0m11:14:39.284260 [debug] [MainThread]: Flushing usage events
+[0m11:14:39.699184 [debug] [MainThread]: An error was encountered while trying to flush usage events
